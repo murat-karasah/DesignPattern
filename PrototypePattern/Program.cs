@@ -25,18 +25,13 @@ namespace PrototypePattern
 
             var dailymeetingmoon = dailymeetingmorning.Clone();
             dailymeetingmoon.StarTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy.MM.dd 12:00"));
-
             dailymeetingmoon.EndTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy.MM.dd 12:15"));
             var dailymeetingNight = dailymeetingmorning.Clone();
             dailymeetingNight.StarTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy.MM.dd 20:00"));
-
             dailymeetingNight.EndTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy.MM.dd 20:15"));
-
             Console.WriteLine(string.Format("Sabah oturumu :{0}-{1}", dailymeetingmorning.StarTime, dailymeetingmorning.EndTime));
             Console.WriteLine(string.Format("Öğlen oturumu :{0}-{1}", dailymeetingmoon.StarTime, dailymeetingmoon.EndTime));
             Console.WriteLine(string.Format("Akşam oturumu :{0}-{1}", dailymeetingNight.StarTime, dailymeetingNight.EndTime));
-
-            Console.WriteLine("################################");
             var myFirstGame = new GameProduct()
             {
                 GameName = "WoW",
@@ -51,15 +46,15 @@ namespace PrototypePattern
                 Age = "+13"
             };
             var mySecondGame = myFirstGame.Clone();
+            var oyun3 = myFirstGame.Clone();
+
             mySecondGame.GameName = "Monopoly";
             mySecondGame.Category = "Finance";
             mySecondGame.Age ="+7";
             mySecondGame.Format = "Box-Table Game";
             mySecondGame.PlayerTypes = new List<string> { "Multi Player" };
             mySecondGame.Material = new List<string> { "Map", "Money", "Pin" };
-
-            Console.WriteLine(string.Format("########\n#Oyun Adı : {0}\n#Kategori : {1} \n#Yaş Sınırı : {2} \n#Format : {3} \n#Material : ", myFirstGame.GameName, myFirstGame.Category, myFirstGame.Age, myFirstGame.Format));
-           
+            Console.WriteLine(string.Format("########\n#Oyun Adı : {0}\n#Kategori : {1} \n#Yaş Sınırı : {2} \n#Format : {3} \n#Material : ", myFirstGame.GameName, myFirstGame.Category, myFirstGame.Age, myFirstGame.Format));           
             foreach (var item in myFirstGame.Material)
             {
                 Console.WriteLine("     >" + item);
@@ -69,16 +64,11 @@ namespace PrototypePattern
             {
                 Console.WriteLine("     >" + item);
             }
-
-
-
             Console.WriteLine(string.Format("########\n#Oyun Adı : {0}\n#Kategori : {1} \n#Yaş Sınırı : {2} \n#Format : {3} \n#Material : ", mySecondGame.GameName,mySecondGame.Category,mySecondGame.Age,mySecondGame.Format));
-
             foreach (var item in mySecondGame.Material)
             {
                 Console.WriteLine("     >"+item);
             }
-
             Console.WriteLine("#Oyuncu Tipi :");
             foreach (var item in mySecondGame.PlayerTypes)
             {
@@ -87,6 +77,16 @@ namespace PrototypePattern
 
 
 
+            Console.WriteLine(string.Format("########\n#Oyun Adı : {0}\n#Kategori : {1} \n#Yaş Sınırı : {2} \n#Format : {3} \n#Material : ", oyun3.GameName, oyun3.Category, oyun3.Age, oyun3.Format));
+            foreach (var item in oyun3.Material)
+            {
+                Console.WriteLine("     >" + item);
+            }
+            Console.WriteLine("#Oyuncu Tipi :");
+            foreach (var item in oyun3.PlayerTypes)
+            {
+                Console.WriteLine("     >" + item);
+            }
         }
     }
 }
